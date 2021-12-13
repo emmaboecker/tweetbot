@@ -23,5 +23,20 @@ dependencies {
 }
 
 application {
-    mainClass.set("net.stckoverflw.tweetbot.LauncherKt")
+    mainClassName = "net.stckoverflw.tweetbot.LauncherKt"
+}
+
+tasks {
+    jar {
+        manifest {
+            attributes(
+                "Main-Class" to "net.stckoverflw.tweetbot.LauncherKt"
+            )
+        }
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
