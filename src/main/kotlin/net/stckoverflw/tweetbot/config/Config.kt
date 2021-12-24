@@ -14,5 +14,4 @@ object Config {
     val TWEET_TEXT: List<String> by getEnv {
         it.split("|")
     }
-
 }

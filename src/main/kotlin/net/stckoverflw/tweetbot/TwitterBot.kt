@@ -10,12 +10,14 @@ private val LOG = KotlinLogging.logger { }
 
 class TwitterBot {
 
-    private val twitter: TwitterClient = TwitterClient(credentials {
-        apiKey = Config.TWITTER_API_KEY
-        apiSecretKey = Config.TWITTER_API_SECRET
-        accessToken = Config.TWITTER_ACCESS_TOKEN
-        accessTokenSecret = Config.TWITTER_ACCESS_SECRET
-    })
+    private val twitter: TwitterClient = TwitterClient(
+        credentials {
+            apiKey = Config.TWITTER_API_KEY
+            apiSecretKey = Config.TWITTER_API_SECRET
+            accessToken = Config.TWITTER_ACCESS_TOKEN
+            accessTokenSecret = Config.TWITTER_ACCESS_SECRET
+        }
+    )
 
     suspend fun start() {
         LOG.info("Starting Schedule \"${Config.KRONTAB_SCHEDULE}\"")
@@ -26,5 +28,4 @@ class TwitterBot {
             true
         }
     }
-
 }
